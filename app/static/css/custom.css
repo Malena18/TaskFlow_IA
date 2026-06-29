@@ -1,0 +1,149 @@
+/* --- Fondo Global --- */
+body {
+    background-color: #f8f9fa; /* Gris muy claro para resaltar las tarjetas blancas */
+}
+
+/* --- Tarjetas de Resumen (Métricas) --- */
+.metric-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+}
+/* Bordes y colores específicos para cada métrica */
+.border-blue { border: 1px solid #d0e2ff; }
+.border-yellow { border: 1px solid #fef0d9; }
+.border-green { border: 1px solid #d1e7dd; }
+.border-red { border: 1px solid #f8d7da; }
+
+.icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-right: 1.25rem;
+}
+.bg-blue-soft { background-color: #e6f0ff; color: #0d6efd; }
+.bg-yellow-soft { background-color: #fff8e6; color: #d97706; }
+.bg-green-soft { background-color: #ebf5f0; color: #198754; }
+.bg-red-soft { background-color: #fce8e9; color: #dc3545; }
+
+/* --- Contenedor Principal de la Tabla --- */
+.table-container {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+/* --- Tabs Superiores --- */
+.nav-tabs-custom {
+    border-bottom: 1px solid #eaeaea;
+    padding: 0 1rem;
+}
+.nav-tabs-custom .nav-link {
+    color: #6c757d;
+    border: none;
+    padding: 1.25rem 1rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    background: transparent;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+.nav-tabs-custom .nav-link:hover { color: #212529; }
+.nav-tabs-custom .nav-link.active {
+    color: #212529;
+    border-bottom: 2px solid #198754; /* Subrayado verde de tu imagen */
+}
+
+/* --- Buscador --- */
+.search-input-wrapper {
+    position: relative;
+}
+.search-input-wrapper i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #adb5bd;
+}
+.search-input {
+    padding-left: 2.2rem;
+    border-radius: 6px;
+    border: 1px solid #eaeaea;
+    box-shadow: none;
+}
+.search-input:focus { border-color: #198754; box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.1); }
+
+/* --- Tabla y Filas --- */
+.table-custom { margin-bottom: 0; }
+.table-custom th {
+    background-color: #ffffff;
+    color: #495057;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #eaeaea;
+}
+.table-custom td {
+    padding: 1rem 1.5rem;
+    vertical-align: middle;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eaeaea;
+    color: #212529;
+}
+.table-custom tbody tr:hover { background-color: #f8f9fa; }
+.text-truncate-custom {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* --- Etiquetas (Badges) Estilo Outline --- */
+.badge-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    border: 1px solid;
+}
+/* Estados */
+.badge-status-completada { background-color: #ebf5f0; color: #198754; border-color: #badbcc; }
+.badge-status-progreso { background-color: #e6f0ff; color: #0d6efd; border-color: #b6d4fe; }
+.badge-status-pendiente { background-color: #fff8e6; color: #d97706; border-color: #ffe69c; }
+/* Prioridades */
+.badge-priority-alta { background-color: #fce8e9; color: #dc3545; border-color: #f5c2c7; }
+.badge-priority-media { background-color: #fff8e6; color: #d97706; border-color: #ffe69c; }
+.badge-priority-baja { background-color: #f8f9fa; color: #6c757d; border-color: #ced4da; }
+
+/* --- Botones de Acción Cuadrados --- */
+.btn-action {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: 1px solid #eaeaea;
+    background-color: #ffffff;
+    transition: all 0.2s;
+}
+.btn-action:hover { background-color: #f8f9fa; border-color: #ced4da; }
+.btn-action i { font-size: 0.9rem; }
+.btn-view { color: #6c757d; }
+.btn-edit { color: #0d6efd; }
+.btn-delete { color: #dc3545; background-color: #fff5f5; border-color: #f8d7da; }
+.btn-delete:hover { background-color: #ffeaea; }

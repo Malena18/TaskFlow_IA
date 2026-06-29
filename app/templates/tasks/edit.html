@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Tarea - TaskFlow IA{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">Editar Tarea</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('tasks.edit_task', id=task.id) }}">
+                    
+                    <div class="mb-3">
+                        <label for="title" class="form-label text-dark fw-bold">Título</label>
+                        <input type="text" class="form-control" id="title" name="title" value="{{ task.title }}" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="description" class="form-label text-dark fw-bold">Descripción</label>
+                        <textarea class="form-control" id="description" name="description" rows="3">{{ task.description or '' }}</textarea>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="status" class="form-label text-dark fw-bold">Estado</label>
+                            <select class="form-select" id="status" name="status">
+                                <option value="Pendiente" {% if task.status == 'Pendiente' %}selected{% endif %}>Pendiente</option>
+                                <option value="En Progreso" {% if task.status == 'En Progreso' %}selected{% endif %}>En Progreso</option>
+                                <option value="Completada" {% if task.status == 'Completada' %}selected{% endif %}>Completada</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="priority" class="form-label text-dark fw-bold">Prioridad</label>
+                            <select class="form-select" id="priority" name="priority">
+                                <option value="Baja" {% if task.priority == 'Baja' %}selected{% endif %}>Baja</option>
+                                <option value="Media" {% if task.priority == 'Media' %}selected{% endif %}>Media</option>
+                                <option value="Alta" {% if task.priority == 'Alta' %}selected{% endif %}>Alta</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="due_date" class="form-label text-dark fw-bold">Fecha Límite</label>
+                            <input type="datetime-local" class="form-control" id="due_date" name="due_date" 
+                                   value="{{ task.due_date.strftime('%Y-%m-%dT%H:%M') if task.due_date else '' }}">
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="{{ url_for('main.dashboard') }}" class="btn btn-outline-secondary">Cancelar</a>
+                        <button type="submit" class="btn btn-primary">Actualizar Tarea</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
